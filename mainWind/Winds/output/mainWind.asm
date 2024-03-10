@@ -11,5 +11,4 @@ ret
 showstr:
 mov rdi,message
 call printf
-add rsp,8
 ret

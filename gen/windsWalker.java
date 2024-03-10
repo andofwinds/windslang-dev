@@ -43,6 +43,7 @@ public class windsWalker extends windsBaseListener {
         System.out.println("Building: " + context.getText());
     }
 
+
     @Override
     public void enterAnyCommand(windsParser.AnyCommandContext context) {
         if (context.command() == null) { return; }
@@ -78,10 +79,16 @@ public class windsWalker extends windsBaseListener {
                 List<TerminalNode> args = context.args().function().funargs().NAME();
 
                 for (Integer i = 0; i < args.size(); i++) {
-
-                    appendCommandToAsmFile( "\n" +
-                            "mov " + registersToArgsTable[i]  + "," + args.get(i)
-                    );
+                    System.out.println(args.get(i).getText());
+                    if (Objects.equals(args.get(i).getText(), "()")) {
+                        appendCommandToAsmFile( "\n" +
+                                "xor " + registersToArgsTable[i] + "," + registersToArgsTable[i]
+                        );
+                    } else {
+                        appendCommandToAsmFile("\n" +
+                                "mov " + registersToArgsTable[i] + "," + args.get(i)
+                        );
+                    }
                 }
                 appendCommandToAsmFile( "\n" +
                         "call " + context.args().function().NAME()

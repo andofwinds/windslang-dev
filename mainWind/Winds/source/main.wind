@@ -15,7 +15,6 @@ override main
 
 override showstr
     call printf(message)
-    !rsp+8
     return null
 
 run
