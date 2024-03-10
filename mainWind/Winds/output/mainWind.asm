@@ -8,7 +8,7 @@ section .text
 main:
 call showstr
 ret
+int 0x10
 showstr:
 mov rdi,message
 call printf
-ret

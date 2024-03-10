@@ -18,8 +18,8 @@ public class windsParser extends Parser {
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, 
-		T__17=18, T__18=19, T__19=20, STRING=21, INTEGER=22, HEX=23, NULL=24, 
-		RUN=25, NAME=26, SPACE=27, COMMENT=28, LCOMMENT=29;
+		T__17=18, T__18=19, T__19=20, T__20=21, STRING=22, INTEGER=23, HEX=24, 
+		NULL=25, RUN=26, NAME=27, SPACE=28, COMMENT=29, LCOMMENT=30;
 	public static final int
 		RULE_cmdLine = 0, RULE_anyCommand = 1, RULE_command = 2, RULE_args = 3, 
 		RULE_function = 4, RULE_funargs = 5, RULE_assign = 6, RULE_typeofvar = 7, 
@@ -37,16 +37,17 @@ public class windsParser extends Parser {
 	private static String[] makeLiteralNames() {
 		return new String[] {
 			null, "'global'", "'extern'", "'section'", "'override'", "'call'", "'syscall'", 
-			"'return'", "'>'", "':'", "'('", "','", "')'", "'='", "'db'", "'dw'", 
-			"'dd'", "'dq'", "'+'", "'-'", "'!'", null, null, null, "'null'", "'run'"
+			"'interrupt'", "'return'", "'>'", "':'", "'('", "','", "')'", "'='", 
+			"'db'", "'dw'", "'dd'", "'dq'", "'+'", "'-'", "'!'", null, null, null, 
+			"'null'", "'run'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, null, null, null, null, null, "STRING", "INTEGER", 
-			"HEX", "NULL", "RUN", "NAME", "SPACE", "COMMENT", "LCOMMENT"
+			null, null, null, null, null, null, null, null, null, null, "STRING", 
+			"INTEGER", "HEX", "NULL", "RUN", "NAME", "SPACE", "COMMENT", "LCOMMENT"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -138,7 +139,7 @@ public class windsParser extends Parser {
 			setState(33);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 114540798L) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 229081598L) != 0)) {
 				{
 				{
 				setState(30);
@@ -216,6 +217,7 @@ public class windsParser extends Parser {
 			case T__4:
 			case T__5:
 			case T__6:
+			case T__7:
 				{
 				{
 				setState(38);
@@ -225,17 +227,17 @@ public class windsParser extends Parser {
 				}
 				}
 				break;
-			case T__13:
 			case T__14:
 			case T__15:
 			case T__16:
+			case T__17:
 			case NAME:
 				{
 				setState(41);
 				assign();
 				}
 				break;
-			case T__19:
+			case T__20:
 			case INTEGER:
 			case HEX:
 				{
@@ -295,7 +297,7 @@ public class windsParser extends Parser {
 			{
 			setState(46);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 254L) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & 510L) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -472,11 +474,12 @@ public class windsParser extends Parser {
 			case T__4:
 			case T__5:
 			case T__6:
-			case T__13:
+			case T__7:
 			case T__14:
 			case T__15:
 			case T__16:
-			case T__19:
+			case T__17:
+			case T__20:
 			case INTEGER:
 			case HEX:
 			case RUN:
@@ -484,10 +487,10 @@ public class windsParser extends Parser {
 				{
 				}
 				break;
-			case T__7:
+			case T__8:
 				{
 				setState(60);
-				match(T__7);
+				match(T__8);
 				setState(65); 
 				_errHandler.sync(this);
 				_alt = 1;
@@ -499,7 +502,7 @@ public class windsParser extends Parser {
 						setState(61);
 						register();
 						setState(62);
-						match(T__8);
+						match(T__9);
 						setState(63);
 						args();
 						}
@@ -563,7 +566,7 @@ public class windsParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(71);
-			match(T__9);
+			match(T__10);
 			setState(81);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
@@ -584,7 +587,7 @@ public class windsParser extends Parser {
 						setState(73);
 						match(NAME);
 						setState(74);
-						match(T__10);
+						match(T__11);
 						}
 						}
 						break;
@@ -607,7 +610,7 @@ public class windsParser extends Parser {
 				break;
 			}
 			setState(83);
-			match(T__11);
+			match(T__12);
 			}
 		}
 		catch (RecognitionException re) {
@@ -660,7 +663,7 @@ public class windsParser extends Parser {
 			setState(86);
 			match(NAME);
 			setState(87);
-			match(T__12);
+			match(T__13);
 			setState(88);
 			args();
 			}
@@ -710,28 +713,28 @@ public class windsParser extends Parser {
 				{
 				}
 				break;
-			case T__13:
-				{
-				setState(91);
-				match(T__13);
-				}
-				break;
 			case T__14:
 				{
-				setState(92);
+				setState(91);
 				match(T__14);
 				}
 				break;
 			case T__15:
 				{
-				setState(93);
+				setState(92);
 				match(T__15);
 				}
 				break;
 			case T__16:
 				{
-				setState(94);
+				setState(93);
 				match(T__16);
+				}
+				break;
+			case T__17:
+				{
+				setState(94);
+				match(T__17);
 				}
 				break;
 			default:
@@ -848,7 +851,7 @@ public class windsParser extends Parser {
 			setState(101);
 			firstop();
 			setState(102);
-			match(T__17);
+			match(T__18);
 			setState(103);
 			lastop();
 			}
@@ -900,7 +903,7 @@ public class windsParser extends Parser {
 			setState(105);
 			firstop();
 			setState(106);
-			match(T__18);
+			match(T__19);
 			setState(107);
 			lastop();
 			}
@@ -963,7 +966,7 @@ public class windsParser extends Parser {
 				match(HEX);
 				}
 				break;
-			case T__19:
+			case T__20:
 				{
 				setState(111);
 				register();
@@ -1032,7 +1035,7 @@ public class windsParser extends Parser {
 				match(HEX);
 				}
 				break;
-			case T__19:
+			case T__20:
 				{
 				setState(116);
 				register();
@@ -1083,7 +1086,7 @@ public class windsParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(119);
-			match(T__19);
+			match(T__20);
 			setState(120);
 			match(NAME);
 			}
@@ -1143,7 +1146,7 @@ public class windsParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u001d}\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
+		"\u0004\u0001\u001e}\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
 		"\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004\u0002"+
 		"\u0005\u0007\u0005\u0002\u0006\u0007\u0006\u0002\u0007\u0007\u0007\u0002"+
 		"\b\u0007\b\u0002\t\u0007\t\u0002\n\u0007\n\u0002\u000b\u0007\u000b\u0002"+
@@ -1163,7 +1166,7 @@ public class windsParser extends Parser {
 		"\u000b\u0001\u000b\u0003\u000bq\b\u000b\u0001\f\u0001\f\u0001\f\u0003"+
 		"\fv\b\f\u0001\r\u0001\r\u0001\r\u0001\u000e\u0001\u000e\u0001\u000e\u0000"+
 		"\u0000\u000f\u0000\u0002\u0004\u0006\b\n\f\u000e\u0010\u0012\u0014\u0016"+
-		"\u0018\u001a\u001c\u0000\u0001\u0001\u0000\u0001\u0007\u0085\u0000!\u0001"+
+		"\u0018\u001a\u001c\u0000\u0001\u0001\u0000\u0001\b\u0085\u0000!\u0001"+
 		"\u0000\u0000\u0000\u0002,\u0001\u0000\u0000\u0000\u0004.\u0001\u0000\u0000"+
 		"\u0000\u00067\u0001\u0000\u0000\u0000\b9\u0001\u0000\u0000\u0000\nG\u0001"+
 		"\u0000\u0000\u0000\fU\u0001\u0000\u0000\u0000\u000e_\u0001\u0000\u0000"+
@@ -1178,41 +1181,41 @@ public class windsParser extends Parser {
 		"\u0006\u0000*-\u0003\u0010\b\u0000+-\u0003\u001c\u000e\u0000,&\u0001\u0000"+
 		"\u0000\u0000,)\u0001\u0000\u0000\u0000,*\u0001\u0000\u0000\u0000,+\u0001"+
 		"\u0000\u0000\u0000-\u0003\u0001\u0000\u0000\u0000./\u0007\u0000\u0000"+
-		"\u0000/\u0005\u0001\u0000\u0000\u000008\u0003\b\u0004\u000018\u0005\u001a"+
-		"\u0000\u000028\u0005\u0015\u0000\u000038\u0005\u0016\u0000\u000048\u0005"+
-		"\u0017\u0000\u000058\u0003\u001a\r\u000068\u0005\u0018\u0000\u000070\u0001"+
+		"\u0000/\u0005\u0001\u0000\u0000\u000008\u0003\b\u0004\u000018\u0005\u001b"+
+		"\u0000\u000028\u0005\u0016\u0000\u000038\u0005\u0017\u0000\u000048\u0005"+
+		"\u0018\u0000\u000058\u0003\u001a\r\u000068\u0005\u0019\u0000\u000070\u0001"+
 		"\u0000\u0000\u000071\u0001\u0000\u0000\u000072\u0001\u0000\u0000\u0000"+
 		"73\u0001\u0000\u0000\u000074\u0001\u0000\u0000\u000075\u0001\u0000\u0000"+
 		"\u000076\u0001\u0000\u0000\u00008\u0007\u0001\u0000\u0000\u00009:\u0005"+
-		"\u001a\u0000\u0000:E\u0003\n\u0005\u0000;F\u0001\u0000\u0000\u0000<A\u0005"+
-		"\b\u0000\u0000=>\u0003\u001a\r\u0000>?\u0005\t\u0000\u0000?@\u0003\u0006"+
+		"\u001b\u0000\u0000:E\u0003\n\u0005\u0000;F\u0001\u0000\u0000\u0000<A\u0005"+
+		"\t\u0000\u0000=>\u0003\u001a\r\u0000>?\u0005\n\u0000\u0000?@\u0003\u0006"+
 		"\u0003\u0000@B\u0001\u0000\u0000\u0000A=\u0001\u0000\u0000\u0000BC\u0001"+
 		"\u0000\u0000\u0000CA\u0001\u0000\u0000\u0000CD\u0001\u0000\u0000\u0000"+
 		"DF\u0001\u0000\u0000\u0000E;\u0001\u0000\u0000\u0000E<\u0001\u0000\u0000"+
-		"\u0000F\t\u0001\u0000\u0000\u0000GQ\u0005\n\u0000\u0000HR\u0001\u0000"+
-		"\u0000\u0000IJ\u0005\u001a\u0000\u0000JL\u0005\u000b\u0000\u0000KI\u0001"+
-		"\u0000\u0000\u0000LM\u0001\u0000\u0000\u0000MK\u0001\u0000\u0000\u0000"+
-		"MN\u0001\u0000\u0000\u0000NO\u0001\u0000\u0000\u0000OR\u0005\u001a\u0000"+
-		"\u0000PR\u0005\u001a\u0000\u0000QH\u0001\u0000\u0000\u0000QK\u0001\u0000"+
-		"\u0000\u0000QP\u0001\u0000\u0000\u0000RS\u0001\u0000\u0000\u0000ST\u0005"+
-		"\f\u0000\u0000T\u000b\u0001\u0000\u0000\u0000UV\u0003\u000e\u0007\u0000"+
-		"VW\u0005\u001a\u0000\u0000WX\u0005\r\u0000\u0000XY\u0003\u0006\u0003\u0000"+
-		"Y\r\u0001\u0000\u0000\u0000Z`\u0001\u0000\u0000\u0000[`\u0005\u000e\u0000"+
-		"\u0000\\`\u0005\u000f\u0000\u0000]`\u0005\u0010\u0000\u0000^`\u0005\u0011"+
+		"\u0000F\t\u0001\u0000\u0000\u0000GQ\u0005\u000b\u0000\u0000HR\u0001\u0000"+
+		"\u0000\u0000IJ\u0005\u001b\u0000\u0000JL\u0005\f\u0000\u0000KI\u0001\u0000"+
+		"\u0000\u0000LM\u0001\u0000\u0000\u0000MK\u0001\u0000\u0000\u0000MN\u0001"+
+		"\u0000\u0000\u0000NO\u0001\u0000\u0000\u0000OR\u0005\u001b\u0000\u0000"+
+		"PR\u0005\u001b\u0000\u0000QH\u0001\u0000\u0000\u0000QK\u0001\u0000\u0000"+
+		"\u0000QP\u0001\u0000\u0000\u0000RS\u0001\u0000\u0000\u0000ST\u0005\r\u0000"+
+		"\u0000T\u000b\u0001\u0000\u0000\u0000UV\u0003\u000e\u0007\u0000VW\u0005"+
+		"\u001b\u0000\u0000WX\u0005\u000e\u0000\u0000XY\u0003\u0006\u0003\u0000"+
+		"Y\r\u0001\u0000\u0000\u0000Z`\u0001\u0000\u0000\u0000[`\u0005\u000f\u0000"+
+		"\u0000\\`\u0005\u0010\u0000\u0000]`\u0005\u0011\u0000\u0000^`\u0005\u0012"+
 		"\u0000\u0000_Z\u0001\u0000\u0000\u0000_[\u0001\u0000\u0000\u0000_\\\u0001"+
 		"\u0000\u0000\u0000_]\u0001\u0000\u0000\u0000_^\u0001\u0000\u0000\u0000"+
 		"`\u000f\u0001\u0000\u0000\u0000ad\u0003\u0012\t\u0000bd\u0003\u0014\n"+
 		"\u0000ca\u0001\u0000\u0000\u0000cb\u0001\u0000\u0000\u0000d\u0011\u0001"+
-		"\u0000\u0000\u0000ef\u0003\u0016\u000b\u0000fg\u0005\u0012\u0000\u0000"+
+		"\u0000\u0000\u0000ef\u0003\u0016\u000b\u0000fg\u0005\u0013\u0000\u0000"+
 		"gh\u0003\u0018\f\u0000h\u0013\u0001\u0000\u0000\u0000ij\u0003\u0016\u000b"+
-		"\u0000jk\u0005\u0013\u0000\u0000kl\u0003\u0018\f\u0000l\u0015\u0001\u0000"+
-		"\u0000\u0000mq\u0005\u0016\u0000\u0000nq\u0005\u0017\u0000\u0000oq\u0003"+
+		"\u0000jk\u0005\u0014\u0000\u0000kl\u0003\u0018\f\u0000l\u0015\u0001\u0000"+
+		"\u0000\u0000mq\u0005\u0017\u0000\u0000nq\u0005\u0018\u0000\u0000oq\u0003"+
 		"\u001a\r\u0000pm\u0001\u0000\u0000\u0000pn\u0001\u0000\u0000\u0000po\u0001"+
-		"\u0000\u0000\u0000q\u0017\u0001\u0000\u0000\u0000rv\u0005\u0016\u0000"+
-		"\u0000sv\u0005\u0017\u0000\u0000tv\u0003\u001a\r\u0000ur\u0001\u0000\u0000"+
+		"\u0000\u0000\u0000q\u0017\u0001\u0000\u0000\u0000rv\u0005\u0017\u0000"+
+		"\u0000sv\u0005\u0018\u0000\u0000tv\u0003\u001a\r\u0000ur\u0001\u0000\u0000"+
 		"\u0000us\u0001\u0000\u0000\u0000ut\u0001\u0000\u0000\u0000v\u0019\u0001"+
-		"\u0000\u0000\u0000wx\u0005\u0014\u0000\u0000xy\u0005\u001a\u0000\u0000"+
-		"y\u001b\u0001\u0000\u0000\u0000z{\u0005\u0019\u0000\u0000{\u001d\u0001"+
+		"\u0000\u0000\u0000wx\u0005\u0015\u0000\u0000xy\u0005\u001b\u0000\u0000"+
+		"y\u001b\u0001\u0000\u0000\u0000z{\u0005\u001a\u0000\u0000{\u001d\u0001"+
 		"\u0000\u0000\u0000\u000b!,7CEMQ_cpu";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());

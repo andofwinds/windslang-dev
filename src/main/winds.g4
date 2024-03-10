@@ -18,6 +18,7 @@ command:
     'override' |
     'call'     |
     'syscall'  |
+    'interrupt'|
     'return'   );
 
 args:

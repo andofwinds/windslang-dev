@@ -103,6 +103,13 @@ public class windsWalker extends windsBaseListener {
                     );
                 }
             }
+            case "interrupt": {
+                if (context.args().HEX() != null) {
+                    appendCommandToAsmFile( "\n" +
+                            "int " + context.args().HEX().getText()
+                    );
+                }
+            }
         }
     }
 

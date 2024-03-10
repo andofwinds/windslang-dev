@@ -10,11 +10,10 @@ backN = 10
 section "text"
 override main
     call showstr()
-
     return null
+    interrupt 0x10
 
 override showstr
     call printf(message)
-    return null
 
 run
