@@ -1,0 +1,21 @@
+>? Everything beginning here....
+
+global "main"
+extern "printf"
+
+section "data"
+message = "windslang"
+backN = 10
+
+section "text"
+override main
+    call showstr()
+
+    return null
+
+override showstr
+    call printf(message)
+    !rsp+8
+    return null
+
+run
